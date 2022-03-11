@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class ScoreController {
 
-    private ScoreService scoreService;
+    private final ScoreService scoreService;
 
     @PutMapping
     public MovieDTO saveScore(@RequestBody ScoreDTO dto) {

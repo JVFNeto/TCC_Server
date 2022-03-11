@@ -3,6 +3,8 @@ package com.backend.dsmovie.model;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -10,6 +12,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Entity
 @Table(name="tb_movie")
+
 public class Movie {
 
     @Id
@@ -20,4 +23,10 @@ public class Movie {
     private Double score;
     private Integer count;
     private String image;
+
+    //como conseguir acessar todas as avaliações de um certo filme, a partir do objeto de filme
+
+    @OneToMany(mappedBy = "id.movie")//um filme tem varias avaliações
+    private Set<Score> scores = new HashSet<>();
+
 }

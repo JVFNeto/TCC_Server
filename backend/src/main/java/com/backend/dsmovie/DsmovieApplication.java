@@ -6,9 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class DsmovieApplication {
 
-	public static void main(String[] args) {
+  public static void main(String[] args) {
+	  SpringApplication.run(DsmovieApplication.class, args);
 
-		SpringApplication.run(DsmovieApplication.class, args);
-	}
-
+  }
 }

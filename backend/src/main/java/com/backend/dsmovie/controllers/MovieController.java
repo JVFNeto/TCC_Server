@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 @RequestMapping(value = "/movies")
 @RestController
@@ -27,4 +29,8 @@ public class MovieController {
     public MovieDTO findById(@PathVariable Long id) {
         return movieService.findById(id);
     }
+
+    @GetMapping
+    public List<MovieDTO> findByTitle (@PathVariable String title){return movieService.findByTitle(title);}
+
 }

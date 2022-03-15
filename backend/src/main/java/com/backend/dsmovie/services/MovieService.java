@@ -10,6 +10,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 
 @Service
 @RequiredArgsConstructor(onConstructor = @__(@Autowired()))
@@ -29,5 +31,11 @@ public class MovieService {
         Movie result= movieRepository.findById(id).get();
         MovieDTO dto= new MovieDTO(result);
         return dto;
+    }
+
+    @Transactional(readOnly = true)
+    public List<MovieDTO> findByTitle(String title){
+        List<MovieDTO> result = movieRepository.findByTitle(title);
+        return result;
     }
 }

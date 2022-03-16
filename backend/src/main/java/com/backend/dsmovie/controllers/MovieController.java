@@ -31,6 +31,7 @@ public class MovieController {
     }
 
     @GetMapping(value= "/search")
-    public List<MovieDTO> findByTitle (@PathVariable String title){return movieService.findByTitle(title);}
+    public List<MovieDTO> findByTitle (@PathVariable String title){
+        return movieService.findByTitle(title);}
 
 }

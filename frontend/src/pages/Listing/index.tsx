@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 import { useState, useEffect } from "react";
 import MovieCard from "components/MovieCard";
 import Pagination from "components/Pagination";
